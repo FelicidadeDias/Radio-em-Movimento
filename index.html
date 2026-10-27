@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10151f">
+  <meta name="description" content="Rádio em Movimento — histórias dos bairros, vozes da comunidade e cultura angolana em movimento.">
+  <title>Rádio em Movimento | A voz da comunidade</title>
+  <style>
+    :root{--ink:#10151f;--panel:#171e2b;--gold:#f4b942;--coral:#ff654d;--cream:#fff8ed;--muted:#c4c9d2;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    header{position:absolute;z-index:5;left:0;right:0;top:0;border-bottom:1px solid rgba(255,255,255,.16)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}
+    .brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--coral));color:#111;font-size:23px;box-shadow:0 8px 30px #0005}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700}.links{display:flex;gap:24px;align-items:center;font-size:13px;font-weight:700}.links a:hover{color:var(--gold)}
+    .nav-cta,.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 18px;border-radius:999px;font-size:13px;font-weight:850;transition:.2s}.nav-cta,.btn-primary{background:var(--gold);color:#17130b}.nav-cta:hover,.btn:hover{transform:translateY(-2px)}
+    .hero{position:relative;min-height:690px;display:flex;align-items:center;overflow:hidden;background:#1b202a url('https://c.pxhere.com/photos/de/c5/on_air_microphone_radio_recording_journalism_presenter_moderation_sound_studio-878646.jpg!d') center 42%/cover no-repeat}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,22,.96) 0%,rgba(10,14,22,.83) 43%,rgba(10,14,22,.30) 100%),linear-gradient(0deg,rgba(10,14,22,.8),transparent 50%)}
+    .hero:after{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(244,185,66,.35);border-radius:50%;right:7%;top:24%;box-shadow:0 0 0 35px rgba(244,185,66,.04),0 0 0 75px rgba(244,185,66,.025);pointer-events:none}
+    .hero-content{position:relative;z-index:1;max-width:700px;padding:150px 0 90px}.eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:2.5px;font-size:11px;font-weight:900;color:var(--gold)}.eyebrow:before{content:"";width:27px;height:2px;background:var(--coral)}
+    h1{font-size:clamp(46px,7.3vw,88px);line-height:.98;letter-spacing:-3.8px;margin:23px 0 24px;max-width:720px}h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:540px;color:#e0e2e7;font-size:17px;margin:0 0 30px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn-primary{padding:15px 22px}.btn-outline{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.06)}.btn-outline:hover{border-color:var(--gold)}
+    .ticker{background:var(--gold);color:#17130b;overflow:hidden;white-space:nowrap;font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:12px;padding:12px 0}.ticker span{padding:0 25px}.ticker b{color:#d84b38}
+    section{padding:90px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:34px}.kicker{color:var(--coral);text-transform:uppercase;letter-spacing:2.5px;font-size:10px;font-weight:900}h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-1.5px;margin:9px 0 0}.section-head p{max-width:430px;color:var(--muted);margin:0;font-size:14px}
+    .intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}.intro-copy p{color:var(--muted);font-size:16px}.values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}.value{border:1px solid var(--line);padding:18px;border-radius:15px;background:rgba(255,255,255,.025)}.value strong{display:block;color:var(--gold);font-size:14px}.value span{font-size:12px;color:var(--muted)}
+    .quote-card{min-height:340px;border-radius:24px;padding:34px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(0deg,rgba(10,14,22,.94),rgba(10,14,22,.08)),url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=85') center/cover;border:1px solid var(--line)}.quote-card .quote-mark{font-size:48px;line-height:1;color:var(--gold)}.quote-card p{font-size:24px;line-height:1.25;font-weight:800;max-width:430px;margin:8px 0}.quote-card small{color:#d5d6db}
+    .dark-section{background:#131a25}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.story{border:1px solid var(--line);background:var(--panel);border-radius:18px;overflow:hidden;transition:.2s}.story:hover{transform:translateY(-4px);border-color:rgba(244,185,66,.5)}.story-top{height:175px;display:flex;align-items:end;padding:18px;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent),url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80') center/cover}.story:nth-child(2) .story-top{background-image:linear-gradient(0deg,rgba(0,0,0,.72),transparent),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')}.story:nth-child(3) .story-top{background-image:linear-gradient(0deg,rgba(0,0,0,.72),transparent),url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80')}.tag{font-size:10px;text-transform:uppercase;letter-spacing:1.7px;font-weight:900;color:var(--gold)}.story-body{padding:21px}.story h3{font-size:20px;line-height:1.2;margin:8px 0}.story p{color:var(--muted);font-size:13px;margin:0}
+    .presenter{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}.portrait{position:relative;max-width:420px;margin:auto}.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:22px;filter:saturate(.92);border:1px solid var(--line)}.portrait:after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--gold);border-radius:22px;z-index:-1}.presenter-copy h2{font-size:clamp(38px,5vw,60px)}.presenter-copy h2 span{color:var(--gold)}.presenter-copy p{color:var(--muted);max-width:560px}.presenter-label{display:inline-block;margin:10px 0 16px;padding:7px 11px;background:rgba(255,101,77,.13);border:1px solid rgba(255,101,77,.3);border-radius:7px;color:#ff9a88;font-size:10px;text-transform:uppercase;letter-spacing:1.6px;font-weight:900}
+    .cta-band{padding:0 0 90px}.cta-inner{padding:44px;border-radius:22px;background:linear-gradient(120deg,#f4b942,#ff7952);color:#17130b;display:flex;align-items:center;justify-content:space-between;gap:30px}.cta-inner h2{font-size:clamp(28px,4vw,42px);max-width:620px}.cta-inner p{max-width:500px;margin-bottom:0;color:#392b20}.cta-inner .btn{background:#17130b;color:white;flex-shrink:0}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{color:var(--cream);font-weight:900}
+    @media(max-width:760px){.links{display:none}.nav{min-height:70px}.nav-cta{padding:10px 13px;font-size:11px}.hero{min-height:650px;background-position:57% center}.hero:before{background:linear-gradient(90deg,rgba(10,14,22,.94),rgba(10,14,22,.55)),linear-gradient(0deg,rgba(10,14,22,.7),transparent)}.hero:after{width:230px;height:230px;right:-65px;top:35%}.hero-content{padding:130px 0 75px}h1{letter-spacing:-2.5px}.hero p{font-size:15px}.section-head,.intro-grid,.presenter{display:grid;grid-template-columns:1fr;gap:25px}.section-head{align-items:start}.cards{grid-template-columns:1fr}.story-top{height:190px}.quote-card{min-height:280px}.presenter{gap:35px}.portrait{width:82%;margin:0 auto 10px}.cta-inner{padding:28px;display:block}.cta-inner .btn{margin-top:22px}.footer-row{align-items:start;flex-direction:column}section{padding:68px 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Rádio em Movimento, início"><span class="brand-mark">♫</span><span>Rádio em Movimento<small>Vozes • Bairros • Cultura</small></span></a>
+    <nav class="links" aria-label="Navegação principal"><a href="#missao">A nossa missão</a><a href="#historias">Histórias</a><a href="#patrice">Patrice</a><a href="#cultura">Cultura</a></nav>
+    <a class="nav-cta" href="https://wa.me/244927088894" target="_blank" rel="noopener">Fale connosco ↗</a>
+  </div>
+</header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap"><div class="hero-content">
+      <span class="eyebrow">A voz que se move com o povo</span>
+      <h1>As histórias dos nossos bairros <em>merecem ser ouvidas.</em></h1>
+      <p>Uma plataforma de comunicação comunitária para dar voz às pessoas, revelar histórias, valorizar talentos e manter viva a cultura angolana.</p>
+      <div class="actions"><a class="btn btn-primary" href="#historias">Explorar conteúdos <span>↓</span></a><a class="btn btn-outline" href="https://wa.me/244927088894" target="_blank" rel="noopener">Partilhar uma história ↗</a></div>
+    </div></div>
+  </section>
+  <div class="ticker"><span>Vozes reais</span><b>✳</b><span>Histórias locais</span><b>✳</b><span>Cultura angolana</span><b>✳</b><span>Comunidade em movimento</span><b>✳</b><span>Vozes reais</span></div>
+  <section id="missao"><div class="wrap intro-grid">
+    <div class="intro-copy"><span class="kicker">Mais do que comunicar</span><h2>O microfone é de todos.</h2><p>A Rádio em Movimento nasce da vontade de escutar com atenção e contar aquilo que muitas vezes fica fora dos grandes canais. Cada bairro tem pessoas com ideias, memórias, desafios e talentos que merecem espaço.</p><p>Queremos aproximar a comunidade, registar histórias locais, conversar sobre os assuntos que importam e celebrar a riqueza cultural de Angola — com respeito, verdade e participação.</p>
+      <div class="values"><div class="value"><strong>Dar voz</strong><span>Às pessoas e às realidades locais.</span></div><div class="value"><strong>Preservar</strong><span>Memórias, expressões e cultura.</span></div><div class="value"><strong>Informar</strong><span>Com escuta e responsabilidade.</span></div><div class="value"><strong>Conectar</strong><span>Bairros, gerações e ideias.</span></div></div>
+    </div>
+    <div class="quote-card"><span class="quote-mark">“</span><p>Uma comunidade cresce quando as suas histórias encontram quem as escute.</p><small>Rádio em Movimento · A voz da comunidade</small></div>
+  </div></section>
+  <section class="dark-section" id="historias"><div class="wrap">
+    <div class="section-head"><div><span class="kicker">Conteúdos em destaque</span><h2>O que acontece à nossa volta.</h2></div><p>Um espaço para entrevistas, reportagens, histórias de bairro e conversas que ajudam a compreender melhor a nossa realidade.</p></div>
+    <div class="cards">
+      <article class="story"><div class="story-top"><span class="tag">Entrevistas</span></div><div class="story-body"><span class="kicker">Vozes da comunidade</span><h3>Histórias de quem faz a diferença</h3><p>Conversas com moradores, criadores, trabalhadores e pessoas que inspiram mudanças no seu bairro.</p></div></article>
+      <article class="story"><div class="story-top"><span class="tag">Vida nos bairros</span></div><div class="story-body"><span class="kicker">Reportagem local</span><h3>Escutar para compreender</h3><p>Questões do quotidiano, desafios locais e ideias para melhorar a vida em comunidade.</p></div></article>
+      <article class="story" id="cultura"><div class="story-top"><span class="tag">Cultura & identidade</span></div><div class="story-body"><span class="kicker">Raízes angolanas</span><h3>Memórias, expressões e talentos</h3><p>Tradições, música, palavras, criatividade e histórias que ajudam a contar quem somos.</p></div></article>
+    </div>
+  </div></section>
+  <section id="patrice"><div class="wrap presenter">
+    <div class="portrait"><img src="pat.png" alt="Fotografia de Patrice, apresentador da Rádio em Movimento" loading="lazy"></div>
+    <div class="presenter-copy"><span class="kicker">A voz por detrás das conversas</span><h2>Conheça <span>Patrice.</span></h2><span class="presenter-label">Apresentador · Perfil de demonstração</span><p>Uma voz que aproxima pessoas, revela histórias e valoriza a identidade cultural. Através de entrevistas e conversas com membros das comunidades, Patrice dá espaço às experiências, aos talentos e às realidades dos bairros.</p><p><em>Nota: este texto é ilustrativo e poderá ser substituído pela biografia oficial.</em></p><a class="btn btn-primary" href="https://wa.me/244927088894" target="_blank" rel="noopener">Entrar em contacto ↗</a></div>
+  </div></section>
+  <section class="cta-band"><div class="wrap"><div class="cta-inner"><div><span class="kicker" style="color:#5c2d17">A comunidade também faz a rádio</span><h2>Tem uma história que merece ser contada?</h2><p>Envie uma sugestão, indique alguém com uma história inspiradora ou partilhe um assunto importante no seu bairro.</p></div><a class="btn" href="https://wa.me/244927088894?text=Ol%C3%A1%2C%20R%C3%A1dio%20em%20Movimento!%20Tenho%20uma%20sugest%C3%A3o%20para%20partilhar." target="_blank" rel="noopener">Enviar mensagem no WhatsApp ↗</a></div></div></section>
+</main>
+<footer><div class="wrap footer-row"><div><div class="footer-brand">Rádio em Movimento</div><div>Vozes dos bairros. Histórias que nos movem.</div></div><div>Contacto: 927 088 894 · <a href="https://wa.me/244927088894" target="_blank" rel="noopener">WhatsApp</a></div><div>Imagem de fundo: <a href="https://pxhere.com/en/photo/878646" target="_blank" rel="noopener">PxHere · CC0</a></div></div></footer>
+</body>
+</html>
